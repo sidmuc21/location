@@ -20,10 +20,11 @@
 	}
 </script>
  
-<div class=" h-screen flex justify-center p-50 bg-linear-to-b from-[#000814] to-[#0c0a3b]">
-  <div class="w-full p-6">
+<div class="min-h-screen flex justify-center items-center px-4 sm:px-6 md:px-12 bg-gradient-to-b from-[#000814] to-[#0c0a3b]">
+  <div class="w-full max-w-md p-6">
     
-    <h1 class="text-2xl font-semibold font-display text-white mb-4 text-center"> GEOLOCATION</h1>
+    <h1 class="text-2xl font-semibold font-display text-white mb-4 text-center">GEOLOCATION</h1>
+    
     <div class="flex justify-center mb-4">
       <button 
         on:click={getLocation} 
@@ -37,7 +38,7 @@
       <p class="text-red-600 text-sm mb-4 text-center">{errorMessage}</p>
     {/if}
 
-    <ul class="text-blue-400 ">
+    <ul class="text-blue-400">
       <li class="my-2 font-bold">BREITENGRAD: {latitude}</li>
       <li class="my-2 font-bold">LANGENGRAD: {longitude}</li>
       <li class="my-2 font-bold">GENAUIGKEIT (m): {accuracy}</li>
