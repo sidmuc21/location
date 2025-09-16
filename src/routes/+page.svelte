@@ -70,7 +70,7 @@ body {
     {/if}
 
     <ul class="text-white">
-      <li class="my-2 ">BREITNGRAD: {latitude}</li>
+      <li class="my-2 ">BREITENGRAD: {latitude}</li>
       <li class="my-2 ">LÄNGENGRAD: {longitude}</li>
       <li class="my-2 ">GENAUIGKEIT (m): {accuracy}</li>
       {#if address}
