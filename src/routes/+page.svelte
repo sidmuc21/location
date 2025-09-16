@@ -64,14 +64,6 @@ async function getAddress(lat, lon) {
   }
 </script>
 
-<style>
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000814;
-  color: white;
-}
-</style>
-
 <div class="min-h-screen flex justify-center items-center px-4 sm:px-6 md:px-12 bg-gradient-to-b from-[#000814] to-[#0c0a3b]">
   <div class="w-full max-w-md p-6">
     
