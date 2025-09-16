@@ -68,7 +68,7 @@ async function getAddress(lat, lon) {
 <div class="min-h-screen flex justify-center items-center px-4 sm:px-6 md:px-12 bg-gradient-to-b from-[#000814] to-[#0c0a3b]">
   <div class="w-full max-w-md p-6">
     
-    <h1 class="text-2xl text-white mb-4 text-center">GEOLOCATION</h1>
+    <h1 class="text-2xl text-blue-200 font-bold mb-4 text-center">GEOLOCATION</h1>
     
     <div class="flex justify-center mb-4">
       <button 
