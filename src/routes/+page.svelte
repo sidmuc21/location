@@ -106,38 +106,33 @@
     text-shadow:
       0 0 5px #0ff,
       0 0 10px #0ff,
-      0 0 20px #0ff,
-      0 0 40px #00ffffcc;
+
   }
 
   .glow-button {
     box-shadow:
       0 0 5px #00ccff,
       0 0 10px #00ccff,
-      0 0 20px #00ccff,
-      0 0 30px #00ccff;
+
   }
 
   .glow-button:hover {
     box-shadow:
       0 0 10px #00ffff,
       0 0 20px #00ffff,
-      0 0 30px #00ffff,
-      0 0 40px #00ffff;
+
   }
 
   .glow-text-red {
     text-shadow:
       0 0 5px #ff4444,
       0 0 10px #ff4444,
-      0 0 20px #ff4444;
   }
 
   .shadow-neon {
     box-shadow:
       0 0 10px #0ff,
       0 0 20px #0ff,
-      0 0 30px #0ff,
       inset 0 0 10px #0ff;
   }
 </style>
