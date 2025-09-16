@@ -61,7 +61,7 @@
       <p class="text-red-600 text-sm mb-4 text-center">{errorMessage}</p>
     {/if}
 
-    <ul class="text-blue-400">
+    <ul class="text-white">
       <li class="my-2 font-bold">BREITENGRAD: {latitude}</li>
       <li class="my-2 font-bold">LÄNGENGRAD: {longitude}</li>
       <li class="my-2 font-bold">GENAUIGKEIT (m): {accuracy}</li>
