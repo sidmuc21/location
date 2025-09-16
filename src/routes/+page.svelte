@@ -44,10 +44,10 @@
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Doto", sans-serif;
 }
 </style>
 
