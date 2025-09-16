@@ -43,6 +43,14 @@
   }
 </script>
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+  body {
+    font-family: 'Audiowide', sans-serif;
+  }
+</style>
+
 <div class="min-h-screen flex justify-center items-center px-4 sm:px-6 md:px-12 bg-gradient-to-b from-[#000814] to-[#0c0a3b]">
   <div class="w-full max-w-md p-6">
     
