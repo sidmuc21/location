@@ -4,6 +4,7 @@
   let accuracy = null;
   let address = null;
   let errorMessage = null;
+  let flag = null;
 
   const apiKey = '84ea7caff22e4de9bea2d25c44ab7a8e';
 
@@ -23,9 +24,10 @@
   function showError(error) {
     errorMessage = "Es gibt einen Fehler beim Abrufen des Standorts.";
     address = null;
+    flag = null;
   }
 
-  async function getAddress(lat, lon) {
+async function getAddress(lat, lon) {
     try {
       const response = await fetch(
         `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=${apiKey}`
@@ -33,12 +35,31 @@
       const data = await response.json();
 
       if (data.features && data.features.length > 0) {
-        address = data.features[0].properties.formatted;
+        const props = data.features[0].properties;
+        address = props.formatted;
+
+        const countryName = props.country; 
+        const countryCode = props.country_code; 
+
+        if (countryName) {
+            const flagRes = await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=true`);
+            const flagData = await flagRes.json();
+
+            if (flagData && flagData[0] && flagData[0].flag) {
+              flag = flagData[0].flag; 
+            } else {
+              flag = null;
+            }
+        } else {
+          flag = null;
+        }
       } else {
         address = "Keine Adresse gefunden.";
+        flag = null;
       }
     } catch (error) {
       address = "Fehler beim Abrufen der Adresse.";
+      flag = null;
     }
   }
 </script>
@@ -75,6 +96,7 @@ body {
       <li class="my-2 ">GENAUIGKEIT (m): {accuracy}</li>
       {#if address}
         <li class="my-2 ">ADRESSE: {address}</li>
+        <li class="my-2 ">{flag}</li>
       {/if}
     </ul>
   </div>
