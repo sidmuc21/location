@@ -44,17 +44,17 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-  body {
-    font-family: 'Audiowide', sans-serif;
-  }
+body {
+  font-family: 'Roboto', sans-serif;
+}
 </style>
 
 <div class="min-h-screen flex justify-center items-center px-4 sm:px-6 md:px-12 bg-gradient-to-b from-[#000814] to-[#0c0a3b]">
   <div class="w-full max-w-md p-6">
     
-    <h1 class="text-2xl font-semibold font-display text-white mb-4 text-center">GEOLOCATION</h1>
+    <h1 class="text-2xl text-white mb-4 text-center">GEOLOCATION</h1>
     
     <div class="flex justify-center mb-4">
       <button 
@@ -70,11 +70,11 @@
     {/if}
 
     <ul class="text-white">
-      <li class="my-2 font-bold">BREITNGRAD: {latitude}</li>
-      <li class="my-2 font-bold">LÄNGENGRAD: {longitude}</li>
-      <li class="my-2 font-bold">GENAUIGKEIT (m): {accuracy}</li>
+      <li class="my-2 ">BREITNGRAD: {latitude}</li>
+      <li class="my-2 ">LÄNGENGRAD: {longitude}</li>
+      <li class="my-2 ">GENAUIGKEIT (m): {accuracy}</li>
       {#if address}
-        <li class="my-2 font-bold">ADRESSE: {address}</li>
+        <li class="my-2 ">ADRESSE: {address}</li>
       {/if}
     </ul>
   </div>
