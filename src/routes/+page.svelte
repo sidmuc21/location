@@ -1,6 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
-
   let latitude = null;
   let longitude = null;
   let accuracy = null;
@@ -9,7 +7,6 @@
   let flag = null;
 
   const apiKey = '84ea7caff22e4de9bea2d25c44ab7a8e';
-  let map;
 
   function getLocation() {
     navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -22,25 +19,6 @@
     errorMessage = null;
 
     getAddress(latitude, longitude);
-
-    // Initialize or update the Leaflet map here
-    if (!map) {
-      map = L.map('map').setView([latitude, longitude], 13);
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-      }).addTo(map);
-    } else {
-      map.setView([latitude, longitude], 13);
-    }
-
-    // Clear existing markers before adding a new one
-    if (map.marker) {
-      map.removeLayer(map.marker);
-    }
-
-    map.marker = L.marker([latitude, longitude]).addTo(map);
   }
 
   function showError(error) {
@@ -87,18 +65,6 @@
 
 <svelte:head>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-sA+Rl2bk3kPhXk8Gv3Dv6sAo+Y4w+Bhf4qA+nrbG2hU="
-    crossorigin=""
-  />
-  <script
-    src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-Dx4mHbt6LJwDsMgM0UwH1h+WnG8l70wl8XZlnz3zD2M="
-    crossorigin=""
-    defer
-  ></script>
 </svelte:head>
 
 <div class="min-h-screen flex justify-center items-center px-4 sm:px-6 md:px-12 bg-gradient-to-b from-[#000814] to-[#0c0a3b] font-orbitron">
@@ -119,7 +85,7 @@
       <p class="text-red-500 text-sm mb-6 text-center glow-text-red">{errorMessage}</p>
     {/if}
 
-    <ul class="text-blue-300 text-lg space-y-3 mb-6">
+    <ul class="text-blue-300 text-lg space-y-3">
       <li>BREITENGRAD: {latitude}</li>
       <li>LÄNGENGRAD: {longitude}</li>
       <li>GENAUIGKEIT (m): {accuracy}</li>
@@ -128,9 +94,6 @@
         <li class="text-3xl">{flag}</li>
       {/if}
     </ul>
-
-    <!-- Leaflet map container -->
-    <div id="map"></div>
   </div>
 </div>
 
@@ -142,25 +105,28 @@
   .glow-text {
     text-shadow:
       0 0 5px #0ff,
-      0 0 10px #0ff;
+      0 0 10px #0ff,
+
   }
 
   .glow-button {
     box-shadow:
       0 0 5px #00ccff,
-      0 0 10px #00ccff;
+      0 0 10px #00ccff,
+
   }
 
   .glow-button:hover {
     box-shadow:
       0 0 10px #00ffff,
-      0 0 20px #00ffff;
+      0 0 20px #00ffff,
+
   }
 
   .glow-text-red {
     text-shadow:
       0 0 5px #ff4444,
-      0 0 10px #ff4444;
+      0 0 10px #ff4444,
   }
 
   .shadow-neon {
@@ -168,12 +134,5 @@
       0 0 10px #0ff,
       0 0 20px #0ff,
       inset 0 0 10px #0ff;
-  }
-
-  #map {
-    height: 300px;
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid #0ff;
   }
 </style>
