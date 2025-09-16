@@ -65,11 +65,9 @@ async function getAddress(lat, lon) {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
 body {
-  font-family: 'Orbitron', sans-serif;
-  background-color: #000814; /* Keep your dark background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000814;
   color: white;
 }
 </style>
